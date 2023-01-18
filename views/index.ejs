@@ -1,43 +1,12 @@
 <!DOCTYPE html>
 <html>
+
   <head>
-    <title>Challenge Node JS </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-
-    <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i&display=swap" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" rel="stylesheet">  
-
-        <link rel="stylesheet" href="StyleCards.css"/>
-
-
+    <%- include('./partials/head.ejs') %>
   </head>
-    <nav class="navbar">
-      <div class="container">
-    
-        <div class="navbar-header">
-          <button class="navbar-toggler" data-toggle="open-navbar1">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <a href="#">
-            <h4>EL<span>Challenge</span></h4>
-          </a>
-        </div>
-    
-        <div class="navbar-menu" id="open-navbar1">
-          <ul class="navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Sign Up</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+
+
+  <%- include('./partials/nav.ejs') %>
     <body>
     <br>
     <div class="category-name">Peliculas</div> <br/>
@@ -53,7 +22,7 @@
           </div>
 
           <div class="card-link">
-              <a href="#" title="Read Full"><span>Read Full</span></a>
+              <a href="#" title="Read Full"><span>Detalle</span></a>
           </div>
       </div>
           <% }) %>
