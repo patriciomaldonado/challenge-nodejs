@@ -35,7 +35,7 @@ module.exports = (sequelize, dataTypes) => {
     
 
     Actor.associate = function(models) {
-        User.belongsToMany(models.Movie, {
+        Actor.belongsToMany(models.Movie, {
         as: "movies",
         through: "ActorMovie",
         foreignKey: "actor_id",

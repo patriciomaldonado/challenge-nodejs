@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.DATE
     },
     rol: {
-        type: dataTypes.tinyint(4)
+        type: dataTypes.INTEGER(4)
     }
     };
     let config = {

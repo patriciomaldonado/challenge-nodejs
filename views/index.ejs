@@ -28,5 +28,17 @@
         </div>
       </div>
     </nav>
+    <div>
+      <% movies.forEach(function(pelicula) { %>
+          <div>
+              <%= pelicula.title %>
+                  <h3>
+                      <%= pelicula.title %>
+                  </h3>
+              </a>
+          </div>
+          <% }) %>
+    </div>
+
   </body>
 </html>
