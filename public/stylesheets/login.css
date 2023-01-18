@@ -36,13 +36,13 @@
     text-rendering: optimizeLegibility;
   }
   
-  /* body {
+  body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1rem;
     font-weight: normal;
     line-height: 1.5;
     color: var(--color-black);
-    background: var(--color-light); */
+    background: var(--color-light);
   }
   
   a,

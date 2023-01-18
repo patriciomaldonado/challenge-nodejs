@@ -3,16 +3,37 @@
 
   <head>
     <%- include('./partials/head.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/login.css">
   </head>
 
-
-  <%- include('./partials/nav.ejs') %>
     <body>
-    <br>
-    <div class="category-name">REGISTRO</div> <br/>
-
+    <%- include('./partials/nav.ejs') %>
     <div class="contenete">
-      
+        <main class="main">
+            <div class="container2">
+                <section class="wrapper">
+                    <div class="heading">
+                        <h1 class="text text-large">Registro</h1>
+                        <br>
+                        <p class="text text-normal">Ya sos cliente? <span><a href="/user/login" class="text text-links">Iniciar Sesion</a></span>
+                        </p>
+                    </div>
+                    <form name="signin" class="form">
+                        <div class="input-control">
+                            <label for="email" class="input-label" hidden>Correo Electronico</label>
+                            <input type="email" name="email" id="email" class="input-field" placeholder="Correo Electronico">
+                        </div>
+                        <div class="input-control">
+                            <label for="password" class="input-label" hidden>Contraseña</label>
+                            <input type="password" name="password" id="password" class="input-field" placeholder="Contraseña">
+                        </div>
+                        <div style="justify-content: center;" class="input-control">
+                            <input type="submit" name="submit" class="input-submit" value="Registrarse" disabled>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </main>
     </div>
 
   </body>
