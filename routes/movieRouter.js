@@ -26,5 +26,7 @@ router.get('/detalle/:id', movieController.detail);
 router.get('/', movieController.index);
 router.get('/create', movieController.create);
 router.post('/create', validateCreationMiddleware, movieController.store); 
+router.get('/edit/:id', movieController.edit); 
+// router.post('/update/:id', movieController.update); 
 
 module.exports = router;

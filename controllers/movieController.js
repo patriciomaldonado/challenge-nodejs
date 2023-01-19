@@ -24,20 +24,41 @@ const movieController = {
         })
     },
     create: function (req, res) {
-        res.render('create');
+        db.Genre.findAll()
+        .then(function(allGenres) {
+        res.render('create', {allGenres});
+        })
+        .catch(error => {
+            res.send(error)
+        })
     },
     store: function (req, res) {
         db.Movie.create({
-            name: req.body.name,
-            price: req.body.price,
-            category_id: req.body.category_id,
-            description: req.body.description,
-            filename: req.file.filename,
+            title: req.body.title,
+            rating: req.body.rating,
+            awards: req.body.awards,
+            release_date: req.body.release_date,
+            length: req.body.length,
+            genre_id: req.body.genre_id,
         })
-            .then(() => {
-                res.redirect('/')
-            })
-    }
+        .then(() => {
+            res.redirect('/movies')
+        })
+        .catch(error => {
+            res.send(error)
+        })
+    },
+    edit: function (req, res) {
+        const movie = db.Movie.findByPk(req.params.id)
+        const genres = db.Genre.findAll()
+        Promise.all([movie, genres])
+        .then(([Movie, allGenres]) => {
+        res.render('edit', { Movie, allGenres });
+        })
+        .catch(error => {
+            res.send(error)
+        })
+    },
 }
 
 

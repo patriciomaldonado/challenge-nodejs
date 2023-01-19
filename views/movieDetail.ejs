@@ -25,7 +25,9 @@
                   
                   <p>RATING: <%= movie.rating %> </p><br>
                   <p>AWARDS: <%= movie.awards %> </p><br>
-                  <p>GENRE: <%= genres.name %> </p><br>
+                  <p>GENRE: <% if(genres != null){ %>
+                    <%= genres.name %>
+                  <% } %> </p><br>
                   <p>ACTOR: <%= actors.first_name + " " + actors.last_name%> </p><br>
                   <p>LENGTH: <%= movie.length + ' min'%> </p><br>
                   <p>RELEASE DATE: <%= movie.release_date %> </p><br>
@@ -34,7 +36,7 @@
 
           <div class="card-link">
               <a href="/movies/create" title="Read Full"><span>Agregar</span></a><br><br>
-              <a href="/movies/edit" title="Read Full"><span>Editar</span></a><br><br>
+              <a href="/movies/edit/<%= movie.id %>" title="Read Full"><span>Editar</span></a><br><br>
               <a href="#" title="Read Full"><span>Borrar</span></a>
           </div>
       </div>
