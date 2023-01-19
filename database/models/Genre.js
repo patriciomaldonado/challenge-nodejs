@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Actor";
+    let alias = "Genre";
     let cols = {
         id: {
         type: dataTypes.INTEGER,
@@ -12,37 +12,31 @@ module.exports = (sequelize, dataTypes) => {
         updated_at: {
             type: dataTypes.DATE
         },
-        first_name: {
+        name: {
             type: dataTypes.STRING(100)
         },
-        last_name:{
-            type: dataTypes.STRING(100)
-        },
-        rating:{
-            type: dataTypes.DECIMAL(3,1)
-        },
-        favorite_movie_id: {
+        ranking:{
             type: dataTypes.INTEGER(10)
+        },
+        active:{
+            type: dataTypes.TINYINT(1)
         }
         };
     let config = {
-        tableName: "actors",
+        tableName: "genres",
         timestamps: false
     }
     
       
-    const Actor = sequelize.define(alias, cols, config)
+    const Genre = sequelize.define(alias, cols, config)
     
 
-    Actor.associate = function(models) {
-        Actor.belongsToMany(models.Movie, {
+    Genre.associate = function(models) {
+        Genre.hasMany(models.Movie, {
         as: "movies",
-        through: "actor_movie",
-        foreignKey: "actor_id",
-        otherKey: "movie_id",
-        timestamps: false
+        foreignKey: "genre_id"
     })
     }
 
-    return Actor;
+    return Genre;
     }

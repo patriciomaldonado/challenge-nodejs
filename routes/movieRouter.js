@@ -4,6 +4,9 @@ const movieController = require("../controllers/movieController");
 const multer = require('multer');
 const path = require("path");
 
+
+const validateCreationMiddleware = require('../middlewares/validateCreationMiddleware');
+
 //Definimos constante Storage donde decime donde y como se van a guardar los archivos que subimos
 
 const storage = multer.diskStorage({
@@ -20,5 +23,8 @@ const storage = multer.diskStorage({
 
 
 router.get('/detalle/:id', movieController.detail);
+router.get('/', movieController.index);
+router.get('/create', movieController.create);
+router.post('/create', validateCreationMiddleware, movieController.store); 
 
 module.exports = router;
