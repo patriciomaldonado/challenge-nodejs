@@ -9,15 +9,43 @@
   <%- include('./partials/nav.ejs') %>
   <body>
     <figure>
-        <img src="/img/logo-DH.png" alt="Logo Digital House">
+        <!-- <img src="/img/logo-DH.png" alt="Logo Digital House"> -->
     </figure>
-    <h1><%= movie.title %> </h1>    
+
+    <br/><div class="category-name">Detalle de pelicula</div>
+
+    <div class="contenete" style="padding: 40px;">
+  
+        <div class="basic-card basic-card-aqua cuadraditos">
+          <div class="card-content">
+              <span class="card-title"></span>
+              <p class="card-text">
+
+                <h1><%= movie.title %> </h1><br>
+                  
+                  <p>RATING: <%= movie.rating %> </p><br>
+                  <p>AWARDS: <%= movie.awards %> </p><br>
+                  <p>GENRE: <%= movie.genre %> </p><br>
+                  <p>ACTORS: <%= movie.actors %> </p><br>
+                  <p>LENGTH: <%= movie.length + ' min'%> </p><br>
+                  <p>RELEASE DATE: <%= movie.release_date %> </p><br>
+                </p>
+          </div>
+
+          <div class="card-link">
+              <a title="Read Full"><span>Editar</span></a><br><br>
+              <a title="Read Full"><span>Borrar</span></a>
+          </div>
+      </div>
+          
+
+    <!-- <h1><%= movie.title %> </h1>    
     <br>
     <p>RATING: <%= movie.rating %> </p>
     <p>AWARDS: <%= movie.awards %> </p>
     <p>LENGTH: <%= movie.length + ' min'%> </p>
     <p>RELEASE DATE: <%= movie.release_date %> </p>
-    <br>
+    <br> -->
     <section>
         <!--Aquí debe colocar los botones de Modificar - Borrar y Listado de Películas-->
     </section>
