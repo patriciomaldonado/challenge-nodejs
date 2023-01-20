@@ -34,10 +34,10 @@
                 </p>
           </div>
           <div class="card-link">
-              <a href="/movies/create" title="Read Full"><span>Agregar</span></a><br><br>
-              <a href="/movies/edit/<%= movie.id %>" title="Read Full"><span>Editar</span></a><br><br>
+              <a <% if(user && user.rol == 0) { %> onclick="return confirm('No tenes acceso de administrador');" <% } %> href="/movies/create" title="Read Full"><span>Agregar</span></a><br><br>
+              <a <% if(user && user.rol == 0) { %> onclick="return confirm('No tenes acceso de administrador');" <% } %> href="/movies/edit/<%= movie.id %>" title="Read Full"><span>Editar</span></a><br><br>
               <form action="/movies/delete/<%= movie.id %>" method="POST">
-                <button class="delete" onclick="return confirm('Are you sure you want to delete this item?');" id="elBoton"  type="submit">Borrar</button>
+                <button class="delete" <% if(user && user.rol == 0) { %> onclick="return confirm('No tenes acceso de administrador');" <% } %> <% if(user && user.rol != 0) { %> onclick="return confirm('Are you sure you want to delete this movie?');" <% } %> id="elBoton"  type="submit">Borrar</button>
               </form>
           </div>
       </div>

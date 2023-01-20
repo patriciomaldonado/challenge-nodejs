@@ -17,7 +17,7 @@ const movieController = {
         const actors = db.Actor.findByPk(req.params.id)
         Promise.all([movie, genres, actors])
         .then(([movie, genres, actors]) => {
-        res.render('movieDetail', { movie, genres, actors });
+        res.render('movieDetail', { movie, genres, actors, user: req.session.userLogged });
         })
         .catch(error => {
             res.send(error)

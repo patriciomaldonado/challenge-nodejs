@@ -12,7 +12,7 @@ const authMiddleware = require('../middlewares/authMiddleware');
 
 
 router.get('/', movieController.index);
-router.get('/detalle/:id', movieController.detail);
+router.get('/detalle/:id', authMiddleware, movieController.detail);
 router.get('/create', authMiddleware, clientMiddleware, movieController.create);
 router.post('/create', validateCreationMiddleware, movieController.store); 
 router.get('/edit/:id', authMiddleware, clientMiddleware, movieController.edit); 
