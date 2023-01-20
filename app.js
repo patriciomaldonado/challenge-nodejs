@@ -3,12 +3,26 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const session = require('express-session');
+const cookies = require('cookie-parser');
 
 var indexRouter = require('./routes/indexRouter');
 var userRouter = require('./routes/userRouter');
 var moviesRouter = require('./routes/movieRouter');
 
 var app = express();
+
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
+
+app.use(session({
+  secret: "El mensaje secreto",
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(userLoggedMiddleware);
+
+app.use(cookies());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

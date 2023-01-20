@@ -18,17 +18,36 @@
                         <p class="text text-normal">Ya sos cliente? <span><a href="/user/login" class="text text-links">Iniciar Sesion</a></span>
                         </p>
                     </div>
-                    <form name="signin" class="form">
+                    <form name="signin" method="POST" action="/user/register" class="form">
+                        <% if (locals.errors && errors.name) { %>
+                            <div style="color: red;">
+                                <%= errors.name.msg %>
+                            </div>
+                            <% } %>
+                        <div class="input-control">
+                            <label for="name" class="input-label" hidden>Name</label>
+                            <input type="text" name="name" id="" value="<%= locals.oldData ? oldData.name : null %>" class="input-field" placeholder="Tu nombre">
+                        </div>
+                        <% if (locals.errors && errors.email) { %>
+                            <div style="color: red;">
+                                <%= errors.email.msg %>
+                            </div>
+                            <% } %>
                         <div class="input-control">
                             <label for="email" class="input-label" hidden>Correo Electronico</label>
-                            <input type="email" name="email" id="email" class="input-field" placeholder="Correo Electronico">
+                            <input type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>" class="input-field" placeholder="Correo Electronico">
                         </div>
+                        <% if (locals.errors && errors.password) { %>
+                            <div style="color: red;">
+                                <%= errors.password.msg %>
+                            </div>
+                            <% } %>
                         <div class="input-control">
                             <label for="password" class="input-label" hidden>Contraseña</label>
-                            <input type="password" name="password" id="password" class="input-field" placeholder="Contraseña">
+                            <input type="password" name="password" value="<%= locals.oldData ? oldData.password : null %>" id="password" class="input-field" placeholder="Contraseña">
                         </div>
                         <div style="justify-content: center;" class="input-control">
-                            <input type="submit" name="submit" class="input-submit" value="Registrarse" disabled>
+                            <input type="submit" name="submit" class="input-submit" value="Registrarse">
                         </div>
                     </form>
                 </section>

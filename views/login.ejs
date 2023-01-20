@@ -18,7 +18,12 @@
                         <p class="text text-normal">No tienes cuenta? <span><a href="/user/register" class="text text-links">Crear cuenta</a></span>
                         </p>
                     </div>
-                    <form name="signin" class="form">
+                    <form name="signin" action="/user/login" method="POST" class="form">
+                        <% if (locals.errors && errors.email) { %>
+                            <div style="color: red;">
+                                <%= errors.email.msg %> 
+                            </div>
+                        <% } %>
                         <div class="input-control">
                             <label for="email" class="input-label" hidden>Correo Electronico</label>
                             <input type="email" name="email" id="email" class="input-field" placeholder="Correo Electronico">
@@ -28,7 +33,7 @@
                             <input type="password" name="password" id="password" class="input-field" placeholder="Contraseña">
                         </div>
                         <div style="justify-content: center;" class="input-control">
-                            <input type="submit" name="submit" class="input-submit" value="Login" disabled>
+                            <input type="submit" name="submit" class="input-submit" value="Login">
                         </div>
                     </form>
                 </section>

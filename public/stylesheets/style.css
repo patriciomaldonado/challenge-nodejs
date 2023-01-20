@@ -433,3 +433,15 @@ body {
       .basic-card-dark .card-link a:after {
           background:#eee;
       }
+
+      #elBoton {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        text-decoration: none;
+        color: #fff;
+      }

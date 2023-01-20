@@ -13,28 +13,28 @@
             <div class="container2">
                 <section class="wrapper">
                     <div class="heading">
-                        <h1 class="text text-large">Edit Movie</h1>
+                        <h1 class="text text-large">Editar Pelicula</h1>
                     </div>
-                    <form name="signin" class="form" action="/movies/edit/<%= movies.id%>" method="POST">
+                    <form name="signin" class="form" action="/movies/edit/<%= Movie.id%>" method="POST">
                         <div class="input-control">
                             <label for="title" class="input-label" hidden>Title</label>
-                            <input type="text" name="title" id="email" class="input-field" placeholder="Title" required>
+                            <input type="text" name="title" id="email" class="input-field" placeholder="Title" value="<%= Movie.title %>" required>
                         </div>
                         <div class="input-control">
                             <label for="rating" class="input-label" hidden>Rating</label>
-                            <input type="number" name="rating" id="password" class="input-field" placeholder="Rating" required>
+                            <input type="number" name="rating" id="password" class="input-field" placeholder="Rating" value="<%= Movie.rating %>" required>
                         </div>
                         <div class="input-control">
                             <label for="awards" class="input-label" hidden>Awards</label>
-                            <input type="number" name="awards" id="password" class="input-field" placeholder="Awards" required>
+                            <input type="number" name="awards" id="password" class="input-field" placeholder="Awards" value="<%= Movie.awards %>" required>
                         </div>
                         <div class="input-control">
                             <label for="release_date" class="input-label" hidden>Release-date</label>
-                            <input type="date" name="release_date" id="password" class="input-field" placeholder="Release-date" required>
+                            <input type="date" name="release_date" id="password" class="input-field" placeholder="Release-date" value="<%= Movie.release_date %>" required>
                         </div>
                         <div class="input-control">
                             <label for="length" class="input-label" hidden>Length</label>
-                            <input type="number" name="length" id="password" class="input-field" placeholder="Length" required>
+                            <input type="number" name="length" id="password" class="input-field" placeholder="Length" value="<%= Movie.length %>" required>
                         </div>
                         <p class="selectcss" style="padding: 0.75rem 1.25rem;">
                             <select class="selectcss" name="genre_id" id="" required>

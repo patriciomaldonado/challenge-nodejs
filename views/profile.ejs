@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <%- include('./partials/head.ejs') %>
+  </head>
+
+
+  <%- include('./partials/nav.ejs') %>
+  <body>
+    <figure>
+        <!-- <img src="/img/logo-DH.png" alt="Logo Digital House"> -->
+    </figure>
+
+    <br/><div class="category-name">Perfil Usuario</div>
+
+    <div class="contenete" style="padding: 40px;">
+  
+        <div class="basic-card basic-card-aqua cuadraditos">
+          <div class="card-content">
+              <span class="card-title"></span>
+              <p class="card-text">
+
+               <h1>Hola: <%= user.name %> Estas loggeado!</h1> 
+               <br>
+               <h1>Email: <%= user.email %> </h1> 
+
+          </div>
+
+
+      </div>
+    
+
+</body>
+</html>
