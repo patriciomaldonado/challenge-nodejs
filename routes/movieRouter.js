@@ -5,16 +5,18 @@ const multer = require('multer');
 const path = require("path");
 const { body } = require("express-validator");
 
+// MIDDLEWARES
 const clientMiddleware = require('../middlewares/clientMiddleware');
 const validateCreationMiddleware = require('../middlewares/validateCreationMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 
 router.get('/', movieController.index);
 router.get('/detalle/:id', movieController.detail);
-router.get('/create', movieController.create);
+router.get('/create', authMiddleware, clientMiddleware, movieController.create);
 router.post('/create', validateCreationMiddleware, movieController.store); 
-router.get('/edit/:id', clientMiddleware, movieController.edit); 
+router.get('/edit/:id', authMiddleware, clientMiddleware, movieController.edit); 
 router.post('/edit/:id', movieController.update); 
-router.post('/delete/:id', clientMiddleware, movieController.delete); 
+router.post('/delete/:id', authMiddleware, clientMiddleware, movieController.delete); 
 
 module.exports = router;

@@ -26,6 +26,9 @@ module.exports = (sequelize, dataTypes) => {
     },
     rol: {
         type: dataTypes.INTEGER(4)
+    },
+    privilege: {
+        type: dataTypes.STRING(15)
     }
     };
     let config = {

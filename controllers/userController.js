@@ -74,7 +74,8 @@ const controller = {
       name: req.body.name,
       email: req.body.email,
       password: bcryptjs.hashSync(req.body.password, 10),
-      privilege: "user",
+      rol: 0,
+      privilege: "usuario"
     };
     let userInDb = await db.User.findOne({
       where: {

@@ -29,11 +29,18 @@ module.exports = (sequelize, dataTypes) => {
         },
         genre_id: {
             type: dataTypes.INTEGER(10)
+        },
+        deleted_at: {
+            type: dataTypes.DATE
         }
         };
     let config = {
         tableName: "movies",
-        timestamps: false
+        createdAt:'created_at',
+        updatedAt:'updated_at',
+        deletedAt: 'deleted_at',
+        timestamps: true,
+        paranoid: true
     }
     
       

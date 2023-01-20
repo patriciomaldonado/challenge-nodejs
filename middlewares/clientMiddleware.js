@@ -1,6 +1,7 @@
+
 function clientMiddleware (req, res, next){
-    if(req.session.userLogged.privilege == "administrador"){
-        res.redirect('/');
+    if(req.session.userLogged.rol == 0){
+        res.redirect('/user/profile');
     }
     // console.log(req.session.userLogged.privilege);
     next()
