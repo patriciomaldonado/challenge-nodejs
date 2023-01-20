@@ -1,6 +1,6 @@
 # Challenge nodejs
 
-[Para-inicializar-el-proyecto] => npm start
+[Para-inicializar-el-proyecto] => npm start (no olvidarse de hacer npm install)
 
 // EL PUERTO DE XAMPP ES 8080
 
