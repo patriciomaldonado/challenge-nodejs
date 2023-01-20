@@ -16,22 +16,47 @@
                         <h1 class="text text-large">Create Movie</h1>
                     </div>
                     <form name="signin" class="form" action="/movies/create" method="POST">
+                        <% if (locals.errors && errors.title) { %>
+                            <div style="color: red;">
+                                <%= errors.title.msg %>
+                            </div>
+                        <% } %>
                         <div class="input-control">
                             <label for="title" class="input-label" hidden>Title</label>
                             <input type="text" name="title" id="email" class="input-field" placeholder="Title" required>
                         </div>
+                        <% if (locals.errors && errors.rating) { %>
+                            <div style="color: red;">
+                                <%= errors.rating.msg %>
+                            </div>
+                        <% } %>
                         <div class="input-control">
                             <label for="rating" class="input-label" hidden>Rating</label>
                             <input type="number" name="rating" id="password" class="input-field" placeholder="Rating" required>
                         </div>
+                        <% if (locals.errors && errors.awards) { %>
+                            <div style="color: red;">
+                                <%= errors.awards.msg %>
+                            </div>
+                        <% } %>
                         <div class="input-control">
                             <label for="awards" class="input-label" hidden>Awards</label>
                             <input type="number" name="awards" id="password" class="input-field" placeholder="Awards" required>
                         </div>
+                        <% if (locals.errors && errors.release_date) { %>
+                            <div style="color: red;">
+                                <%= errors.release_date.msg %>
+                            </div>
+                        <% } %>
                         <div class="input-control">
                             <label for="release_date" class="input-label" hidden>Release-date</label>
                             <input type="date" name="release_date" id="password" class="input-field" placeholder="Release-date" required>
                         </div>
+                        <% if (locals.errors && errors.length) { %>
+                            <div style="color: red;">
+                                <%= errors.length.msg %>
+                            </div>
+                        <% } %>
                         <div class="input-control">
                             <label for="length" class="input-label" hidden>Length</label>
                             <input type="number" name="length" id="password" class="input-field" placeholder="Length" required>
